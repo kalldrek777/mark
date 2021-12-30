@@ -29,7 +29,7 @@ def knife(request):
 
 
 def weapons(request):
-    qs = Product.objects.all().order_by('-date').filter(category='Оружия')
+    qs = Product.objects.all().order_by('-date').filter(category='Оружие')
     paginator = Paginator(qs, 8)  # Show 8 contacts per page.
 
     page_number = request.GET.get('page')
