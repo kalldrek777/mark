@@ -38,6 +38,11 @@ def Search_page(request):
 
                 page_number = request.GET.get('page')
                 page_obj = paginator.get_page(page_number)
+            elif query not in i.name.lower():
+                paginator = Paginator(a, 8)  # Show 8 contacts per page.
+
+                page_number = request.GET.get('page')
+                page_obj = paginator.get_page(page_number)
 
         return page_obj, form
 
