@@ -11,12 +11,12 @@ categorys = [
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=100, unique=True, verbose_name='Название продукта')
-    text = models.TextField(max_length=135, unique=True, verbose_name='Описание продукта')
-    img = models.ImageField(unique=False, verbose_name='Изображение продукта', upload_to='images/')
-    category = models.CharField(max_length=50, unique=False,  verbose_name='Категория продукта', choices=categorys, blank=False, default='Одежда')
-    link_product = models.CharField(max_length=100, unique=False, verbose_name='Ссылка на продукт')
-    date = models.DateTimeField(verbose_name='дата')
+    name = models.CharField(max_length=100, unique=False, verbose_name='Название продукта', null=True)
+    text = models.TextField(max_length=135, unique=False, verbose_name='Описание продукта', null=True)
+    img = models.ImageField(unique=False, verbose_name='Изображение продукта', upload_to='images/', blank=True, null=True)
+    category = models.CharField(max_length=50, unique=False,  verbose_name='Категория продукта', choices=categorys, blank=False, default='Одежда', null=True)
+    link_product = models.CharField(max_length=100, unique=False, verbose_name='Ссылка на продукт', null=True)
+    date = models.DateTimeField(verbose_name='дата', null=True)
 
     def __str__(self):
         return self.name

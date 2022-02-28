@@ -8,7 +8,8 @@
 {% for i in page_obj %}
 <div class="col-md-3">
 <div class="card text-white bg-secondary mb-4">
-  <img id="card_img" class="card-img-top" src="{{i.img.url}}" alt="Card image cap">
+
+  <img id="card_img" class="card-img-top" src="{{ i.img }}" alt="Card image cap">
   <div id="card_body" class="card-body">
     <h5 id="title" class="card-title">{{i.name}}</h5>
     <p class="card-text">{{i.text}}</p>
@@ -22,6 +23,7 @@
 </div>
       </div>
 {% endfor %}
+
 
 <div class="container my-5">
   <nav aria-label="Example">
