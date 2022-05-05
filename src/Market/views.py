@@ -7,15 +7,6 @@ from weapons.forms import SearchForm
 import sqlite3
 import pandas as pd
 
-qs = Product.objects.all().order_by('-date')
-cnx = sqlite3.connect('db.sqlite3')
-
-df = pd.read_sql_query("SELECT name, img_produts2 FROM weapons_product", cnx)
-# list_db = []
-dict_db = {}
-dict_db['df[name]'] = df['img_produts2']
-
-
 
 def home(request):
     qs = Product.objects.all().order_by('-date')
@@ -28,7 +19,7 @@ def home(request):
     if request.method == 'POST':
         Search_page(request)
         page_obj, form = Search_page(request)
-        return render(request,  'Search.html', {'page_obj': page_obj, 'form': form, 'dict_db': dict_db, 'list_db': list_db})
+        return render(request,  'Search.html', {'page_obj': page_obj, 'form': form})
 
     dict = {'page_obj': page_obj, 'form': form}
 
