@@ -51,7 +51,6 @@ six==1.16.0
 SQLAlchemy==1.4.31
 sqlparse==0.4.2
 Twisted==21.7.0
-twisted-iocpsupport==1.0.2
 typing_extensions==4.0.1
 urllib3==1.26.7
 w3lib==1.22.0
