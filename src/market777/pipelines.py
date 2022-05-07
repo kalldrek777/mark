@@ -7,7 +7,7 @@
 # useful for handling different item types with a single interface
 import mysql.connector
 from weapons.models import Product
-
+import psycopg2
 
 class Market777Pipeline(object):
     def __init__(self):
@@ -15,11 +15,11 @@ class Market777Pipeline(object):
         self.create_table()
 
     def create_connection(self):
-        self.conn = mysql.connector.connect(
-            host='localhost',
-            user='root',
-            password='kalldrek287',
-            database='myquotes',
+        self.conn = psycopg2.connect(
+            host='ec2-54-220-243-77.eu-west-1.compute.amazonaws.com',
+            user='jtfxiruheopehc',
+            password='f93d86c9bcc85e3677007586f785d19d5fcd9e95b5e496462586cbac1513e3f2',
+            database='de5kv7me27d4h2',
         )
         self.curr = self.conn.cursor()
         # self.curr.execute("""DELETE FROM weapons_product WHERE id IN (obj.id)""")
@@ -29,8 +29,6 @@ class Market777Pipeline(object):
         # self.curr.execute('''CREATE TABLE img_tb(id INTEGER PRIMARY KEY NOT NULL, src VARCHAR(100))''')
         self.curr.execute('''DROP TABLE IF EXISTS example''')
         self.curr.execute('''CREATE TABLE example(id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, src VARCHAR(100))''')
-
-
 
 
         # ДОБАВЛЕНИЕ СТОЛБЦА
@@ -58,7 +56,7 @@ class Market777Pipeline(object):
     def store_db(self, item):
         qs = Product.objects.all()
 
-        self.curr.execute('''insert into example(src) values(%s)''', (
+        self.curr.execute('''insert into example(src) VALUES)''', (
             item['img_url'],
         ))
         self.curr.execute('''UPDATE weapons_product SET
