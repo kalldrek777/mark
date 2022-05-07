@@ -15,7 +15,6 @@ import mysql.connector
 
 
 class ProductAdmin(DjangoObjectActions, admin.ModelAdmin):
-    # change_list_template = 'weapons/templates/admin/weapons/product/model_change_list.html'
     exclude = ['img', 'num_product']
     list_display = ["name", "link_product"]
 
