@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'weapons',
     'scrapy',
+    'django_object_actions',
 ]
 
 MIDDLEWARE = [
