@@ -28,7 +28,9 @@ class Market777Pipeline(object):
         # self.curr.execute('''DROP TABLE IF EXISTS img_tb''')
         # self.curr.execute('''CREATE TABLE img_tb(id INTEGER PRIMARY KEY NOT NULL, src VARCHAR(100))''')
         self.curr.execute('''DROP TABLE IF EXISTS example''')
-        self.curr.execute('''CREATE TABLE example(id INTEGER PRIMARY KEY NOT NULL serial, src VARCHAR(100))''')
+        self.curr.execute('''CREATE TABLE example(
+            id INTEGER PRIMARY KEY NOT NULL SERIAL,
+            src VARCHAR(100))''')
         # self.curr.execute('''CREATE TABLE example(id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, src VARCHAR(100))''') mysql
 
 
