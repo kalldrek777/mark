@@ -28,7 +28,8 @@ class Market777Pipeline(object):
         # self.curr.execute('''DROP TABLE IF EXISTS img_tb''')
         # self.curr.execute('''CREATE TABLE img_tb(id INTEGER PRIMARY KEY NOT NULL, src VARCHAR(100))''')
         self.curr.execute('''DROP TABLE IF EXISTS example''')
-        self.curr.execute('''CREATE TABLE example(id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, src VARCHAR(100))''')
+        self.curr.execute('''CREATE TABLE example(id INTEGER PRIMARY KEY NOT NULL auto_increment, src VARCHAR(100))''')
+        # self.curr.execute('''CREATE TABLE example(id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, src VARCHAR(100))''')
 
 
         # ДОБАВЛЕНИЕ СТОЛБЦА
@@ -60,8 +61,16 @@ class Market777Pipeline(object):
             item['img_url'],
         ))
         self.curr.execute('''UPDATE weapons_product SET
-                         img = (SELECT example.src FROM example where weapons_product.num_product = example.id)  # w_p id = порядковый номер
-            ''')
+                             img = (SELECT example.src FROM example where weapons_product.num_product = example.id)  # w_p id = порядковый номер
+                ''')
+
+        # self.curr.execute('''insert into example(src) VALUES)''', (
+        #     item['img_url'],
+        # ))
+        # self.curr.execute('''UPDATE weapons_product SET
+        #                  img = (SELECT example.src FROM example where weapons_product.num_product = example.id)  # w_p id = порядковый номер
+        #     ''')
+
 
         # inner join - связывание таблиц по общему признаку
 
