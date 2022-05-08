@@ -59,7 +59,7 @@ class Market777Pipeline(object):
     def store_db(self, item):
         qs = Product.objects.all()
 
-        self.curr.execute('''insert into example(src) VALUES''', (
+        self.curr.execute('''insert into example(src) VALUES(%s)''', (
             item['img_url'],
         ))
         self.curr.execute('''UPDATE weapons_product SET
