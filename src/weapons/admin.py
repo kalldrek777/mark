@@ -29,7 +29,7 @@ class ProductAdmin(DjangoObjectActions, admin.ModelAdmin):
         super().save_model(request, obj, form, change)
 
     def get(modeladmin, request, queryset):
-        os.system('Scrapy crawl market77')
+        os.system('heroku run scrapy crawl market77')
 
     changelist_actions = ('get',)
 
