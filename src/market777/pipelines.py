@@ -63,7 +63,7 @@ class Market777Pipeline(object):
             item['img_url'],
         ))
         self.curr.execute('''UPDATE weapons_product SET
-                             img = (SELECT example.src FROM example where weapons_product.num_product = example.id)  # w_p id = порядковый номер
+                             img = (SELECT example.src FROM example where weapons_product.num_product = example.id)  
                 ''')
 
         # self.curr.execute('''insert into example(src) VALUES)''', (
