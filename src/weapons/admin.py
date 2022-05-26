@@ -11,7 +11,6 @@ import subprocess
 from django.contrib import admin
 from django_object_actions import DjangoObjectActions
 import os
-import mysql.connector
 
 
 class ProductAdmin(DjangoObjectActions, admin.ModelAdmin):
