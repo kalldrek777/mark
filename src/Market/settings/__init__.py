@@ -1,5 +1,5 @@
 from .production import *
 try:
-    from .local_settings import *
+    from .private_settings.py import *
 except ImportError:
     pass
