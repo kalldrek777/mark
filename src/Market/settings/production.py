@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'Market.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': str('quotes'),
+        'NAME': str('myquotes'),
         'PASSWORD': 'Gamid2005!',
         'USER': 'root',
     }
